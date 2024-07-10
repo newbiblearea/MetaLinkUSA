@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>METALINK - Welcome to METALINK</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Products & Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home">
+        <h1>Welcome to METALINK</h1>
+        <h2>MLC Token First Round Private Sale Progress</h2>
+        <div id="progress-bar-container">
+            <div id="progress-bar" style="width: 50%;"></div>
+        </div>
+        <p>Our DAO organized project is currently conducting the first round of MLC private sale. The progress is as follows:</p>
+    </section>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>METALINK is a cutting-edge project initiated by a DAO organization. Our mission is to revolutionize the industry with our innovative solutions.</p>
+    </section>
+    <section id="services">
+        <h2>Products & Services</h2>
+        <p>Our app platform offers state-of-the-art features and functionalities designed to meet the needs of our users. Stay tuned for more updates!</p>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    <footer>
+        <p>© 2024 METALINK. All rights reserved.</p>
+    </footer>
+    <script>
+        // Example of updating the progress bar dynamically
+        const progressBar = document.getElementById('progress-bar');
+        const progress = 50; // Example progress percentage
+        progressBar.style.width = progress + '%';
+    </script>
+</body>
+</html>
