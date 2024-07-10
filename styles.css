@@ -88,6 +88,13 @@ nav ul li a:hover {
     }
 }
 
+.datetime {
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
 section {
     padding: 2rem;
     max-width: 800px;
