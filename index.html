@@ -1,119 +1,73 @@
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #121212;
-    color: #ffffff;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>METALINK - Welcome to METALINK</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Products & Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home">
+        <h1>Welcome to METALINK</h1>
+        <h2>MLC Token First Round Private Sale Progress</h2>
+        <div id="progress-bar-container">
+            <div id="progress-bar" style="width: 10%;"></div>
+        </div>
+        <p id="progress-info">50,000 / 500,000 MLC ($15,000)</p>
+        <p>Private Sale Price: $0.3 per MLC</p>
+        <p>Expected Launch Price: $1 per MLC</p>
+        <p>Private Sale Ends: July 31, 2024</p>
+    </section>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>METALINK DAO</p>
+        <p>Meta - Metaverse, Link - Connect Everything, DAO - Decentralized Autonomous Organization based on Web3 technology. Through metaverse technology and modern AI technology, we achieve interconnection between people, and between people and objects, creating a platform of interconnected everything. Decentralized management realizes a true, fair, and just ecological community that effectively empowers the real economy with virtual economy.</p>
+    </section>
+    <section id="services">
+        <h2>Products & Services</h2>
+        <p>Our app platform offers state-of-the-art features and functionalities designed to meet the needs of our users. Stay tuned for more updates!</p>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    <footer>
+        <p>© 2024 METALINK. All rights reserved.</p>
+    </footer>
+    <script>
+        const totalMLC = 500000;
+        const pricePerMLC = 0.3;
 
-header {
-    background-color: #1f1f1f;
-    color: #fff;
-    padding: 1rem;
-    text-align: center;
-    border-bottom: 2px solid #4caf50;
-}
+        // Function to update the progress bar and display information
+        function updateProgress(progress) {
+            const progressBar = document.getElementById('progress-bar');
+            const mlcSold = (progress / 100) * totalMLC;
+            const amountRaised = mlcSold * pricePerMLC;
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
+            progressBar.style.width = progress + '%';
+            document.getElementById('progress-info').textContent = `${mlcSold.toLocaleString()} / ${totalMLC.toLocaleString()} MLC ($${amountRaised.toLocaleString('en-US', { style: 'currency', currency: 'USD' }).replace('$', '')})`;
+        }
 
-nav ul li {
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #4caf50;
-}
-
-section {
-    padding: 2rem;
-    max-width: 800px;
-    margin: 2rem auto;
-    border: 1px solid #333;
-    border-radius: 10px;
-    background-color: #1f1f1f;
-}
-
-h1, h2 {
-    text-align: center;
-    color: #4caf50;
-}
-
-#progress-bar-container {
-    width: 100%;
-    background-color: #333;
-    border: 1px solid #555;
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 1rem 0;
-}
-
-#progress-bar {
-    height: 30px;
-    background-color: #4caf50;
-    width: 0;
-    transition: width 1s;
-}
-
-#progress-info {
-    text-align: center;
-    margin: 1rem 0;
-    font-size: 1.2rem;
-}
-
-footer {
-    background-color: #1f1f1f;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    border-top: 2px solid #4caf50;
-}
-
-form label {
-    display: block;
-    margin-top: 1rem;
-}
-
-form input, form textarea {
-    width: 100%;
-    padding: 0.5rem;
-    margin-top: 0.5rem;
-    border: none;
-    border-radius: 5px;
-    background-color: #333;
-    color: #fff;
-}
-
-form input:focus, form textarea:focus {
-    outline: none;
-    border: 1px solid #4caf50;
-}
-
-form button {
-    background-color: #4caf50;
-    color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 1rem;
-    display: block;
-    width: 100%;
-    transition: background-color 0.3s;
-}
-
-form button:hover {
-    background-color: #45a049;
-}
+        // Set initial progress to 10%
+        document.addEventListener('DOMContentLoaded', () => updateProgress(10));
+    </script>
+</body>
+</html>
