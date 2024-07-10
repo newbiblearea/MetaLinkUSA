@@ -120,14 +120,14 @@ h1, h2 {
     margin: 1rem 0;
 }
 
-#progress-bar {
+#progress-bar, #progress-bar-2 {
     height: 30px;
     background-color: #4caf50;
     width: 0;
     transition: width 1s;
 }
 
-#progress-info {
+#progress-info, #progress-info-2 {
     text-align: center;
     margin: 1rem 0;
     font-size: 1.2rem;
