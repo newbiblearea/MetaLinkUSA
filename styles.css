@@ -11,33 +11,44 @@ header {
     color: #fff;
     padding: 1rem;
     text-align: center;
+    border-bottom: 2px solid #4caf50;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 1rem;
+    margin: 0 1rem;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #4caf50;
 }
 
 section {
     padding: 2rem;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 2rem auto;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background-color: #1f1f1f;
 }
 
 h1, h2 {
     text-align: center;
+    color: #4caf50;
 }
 
 #progress-bar-container {
@@ -67,9 +78,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1rem;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    border-top: 2px solid #4caf50;
 }
 
 form label {
@@ -83,6 +92,13 @@ form input, form textarea {
     margin-top: 0.5rem;
     border: none;
     border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border: 1px solid #4caf50;
 }
 
 form button {
@@ -93,6 +109,9 @@ form button {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 1rem;
+    display: block;
+    width: 100%;
+    transition: background-color 0.3s;
 }
 
 form button:hover {
