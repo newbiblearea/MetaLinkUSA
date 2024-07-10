@@ -24,8 +24,9 @@
             <div id="progress-bar" style="width: 0%;"></div>
         </div>
         <p id="progress-info">0 / 500,000 MLC ($0)</p>
-        <input type="number" id="progress-input" placeholder="Enter progress percentage" />
-        <button onclick="updateProgress()">Update Progress</button>
+        <p>Private Sale Price: $0.3 per MLC</p>
+        <p>Expected Launch Price: $1 per MLC</p>
+        <p>Private Sale Ends: July 31, 2024</p>
     </section>
     <section id="about">
         <h2>About Us</h2>
@@ -55,16 +56,28 @@
         const pricePerMLC = 0.3;
 
         // Function to update the progress bar and display information
-        function updateProgress() {
+        function updateProgress(progress) {
             const progressBar = document.getElementById('progress-bar');
-            const progressInput = document.getElementById('progress-input').value;
-            const progress = Math.min(Math.max(progressInput, 0), 100); // Ensure progress is between 0 and 100
             const mlcSold = (progress / 100) * totalMLC;
             const amountRaised = mlcSold * pricePerMLC;
 
             progressBar.style.width = progress + '%';
             document.getElementById('progress-info').textContent = `${mlcSold.toLocaleString()} / ${totalMLC.toLocaleString()} MLC ($${amountRaised.toLocaleString('en-US', { style: 'currency', currency: 'USD' }).replace('$', '')})`;
         }
+
+        // Fetch progress data from backend
+        async function fetchProgress() {
+            try {
+                const response = await fetch('/path/to/your/progress/api'); // Replace with your API endpoint
+                const data = await response.json();
+                updateProgress(data.progress);
+            } catch (error) {
+                console.error('Error fetching progress data:', error);
+            }
+        }
+
+        // Fetch progress data on page load
+        document.addEventListener('DOMContentLoaded', fetchProgress);
     </script>
 </body>
 </html>
