@@ -65,10 +65,10 @@
             document.getElementById('progress-info').textContent = `${mlcSold.toLocaleString()} / ${totalMLC.toLocaleString()} MLC ($${amountRaised.toLocaleString('en-US', { style: 'currency', currency: 'USD' }).replace('$', '')})`;
         }
 
-        // Fetch progress data from backend
+        // Fetch progress data from GitHub
         async function fetchProgress() {
             try {
-                const response = await fetch('/path/to/your/progress/api'); // Replace with your API endpoint
+                const response = await fetch('https://yourusername.github.io/metalink-website/progress.json'); // 使用你的JSON文件URL
                 const data = await response.json();
                 updateProgress(data.progress);
             } catch (error) {
