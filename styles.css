@@ -6,6 +6,7 @@ body {
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
     color: #ffffff;
+    overflow-x: hidden; /* Prevents horizontal scroll */
 }
 
 @keyframes gradientBG {
@@ -36,6 +37,7 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
 nav ul li {
@@ -56,6 +58,7 @@ nav ul li a:hover {
 .typing-container {
     text-align: center;
     margin-top: 2rem;
+    overflow: hidden; /* Prevents overflow on smaller screens */
 }
 
 .typing {
@@ -64,6 +67,7 @@ nav ul li a:hover {
     white-space: nowrap;
     overflow: hidden;
     animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+    max-width: 100%; /* Ensures text stays within container */
 }
 
 @keyframes typing {
