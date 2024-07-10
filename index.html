@@ -68,7 +68,7 @@
         // Fetch progress data from GitHub
         async function fetchProgress() {
             try {
-                const response = await fetch('https://yourusername.github.io/metalink-website/progress.json'); // 使用你的JSON文件URL
+                const response = await fetch('https://yourusername.github.io/metalink-website/progress.json'); // 确保这是你的GitHub Pages URL
                 const data = await response.json();
                 updateProgress(data.progress);
             } catch (error) {
