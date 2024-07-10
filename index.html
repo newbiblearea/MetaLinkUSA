@@ -32,10 +32,13 @@
         <p>Private Sale Ends: July 31, 2024</p>
         <p>Launch Floor Price: $1 per MLC</p>
         <h2>Second Round Private Sale</h2>
-        <p>Start Date: August 1, 2024</p>
-        <p>End Date: August 15, 2024</p>
-        <p>Amount: 300,000 MLC</p>
-        <p>Price: $0.5 per MLC</p>
+        <div id="progress-bar-container">
+            <div id="progress-bar-2" style="width: 0%;"></div>
+        </div>
+        <p id="progress-info-2">0 / 300,000 MLC ($0)</p>
+        <p>Private Sale Price: $0.5 per MLC</p>
+        <p>Private Sale Starts: August 1, 2024</p>
+        <p>Private Sale Ends: August 15, 2024</p>
     </section>
     <section id="about">
         <h2>About Us</h2>
@@ -62,17 +65,29 @@
         <p>© 2024 METALINK. All rights reserved.</p>
     </footer>
     <script>
-        const totalMLC = 500000;
-        const pricePerMLC = 0.3;
+        const totalMLC1 = 500000;
+        const pricePerMLC1 = 0.3;
+        const totalMLC2 = 300000;
+        const pricePerMLC2 = 0.5;
 
-        // Function to update the progress bar and display information
-        function updateProgress(progress) {
+        // Function to update the progress bar and display information for first round
+        function updateProgress1(progress) {
             const progressBar = document.getElementById('progress-bar');
-            const mlcSold = (progress / 100) * totalMLC;
-            const amountRaised = mlcSold * pricePerMLC;
+            const mlcSold = (progress / 100) * totalMLC1;
+            const amountRaised = mlcSold * pricePerMLC1;
 
             progressBar.style.width = progress + '%';
-            document.getElementById('progress-info').textContent = `${mlcSold.toLocaleString()} / ${totalMLC.toLocaleString()} MLC ($${amountRaised.toLocaleString('en-US', { style: 'currency', currency: 'USD' }).replace('$', '')})`;
+            document.getElementById('progress-info').textContent = `${mlcSold.toLocaleString()} / ${totalMLC1.toLocaleString()} MLC ($${amountRaised.toLocaleString('en-US', { style: 'currency', currency: 'USD' }).replace('$', '')})`;
+        }
+
+        // Function to update the progress bar and display information for second round
+        function updateProgress2(progress) {
+            const progressBar = document.getElementById('progress-bar-2');
+            const mlcSold = (progress / 100) * totalMLC2;
+            const amountRaised = mlcSold * pricePerMLC2;
+
+            progressBar.style.width = progress + '%';
+            document.getElementById('progress-info-2').textContent = `${mlcSold.toLocaleString()} / ${totalMLC2.toLocaleString()} MLC ($${amountRaised.toLocaleString('en-US', { style: 'currency', currency: 'USD' }).replace('$', '')})`;
         }
 
         // Function to display current date and time
@@ -82,9 +97,10 @@
             document.getElementById('datetime').textContent = dateTimeString;
         }
 
-        // Set initial progress to 10%
+        // Set initial progress to 10% for first round and 0% for second round
         document.addEventListener('DOMContentLoaded', () => {
-            updateProgress(10);
+            updateProgress1(10);
+            updateProgress2(0);
             updateDateTime();
             setInterval(updateDateTime, 1000); // Update date and time every second
         });
