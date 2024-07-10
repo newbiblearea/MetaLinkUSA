@@ -21,9 +21,11 @@
         <h1>Welcome to METALINK</h1>
         <h2>MLC Token First Round Private Sale Progress</h2>
         <div id="progress-bar-container">
-            <div id="progress-bar" style="width: 50%;"></div>
+            <div id="progress-bar" style="width: 0%;"></div>
         </div>
-        <p>Our DAO organized project is currently conducting the first round of MLC private sale. The progress is as follows:</p>
+        <p id="progress-info">0 / 500,000 MLC ($0)</p>
+        <input type="number" id="progress-input" placeholder="Enter progress percentage" />
+        <button onclick="updateProgress()">Update Progress</button>
     </section>
     <section id="about">
         <h2>About Us</h2>
@@ -49,10 +51,20 @@
         <p>© 2024 METALINK. All rights reserved.</p>
     </footer>
     <script>
-        // Example of updating the progress bar dynamically
-        const progressBar = document.getElementById('progress-bar');
-        const progress = 50; // Example progress percentage
-        progressBar.style.width = progress + '%';
+        const totalMLC = 500000;
+        const pricePerMLC = 0.3;
+
+        // Function to update the progress bar and display information
+        function updateProgress() {
+            const progressBar = document.getElementById('progress-bar');
+            const progressInput = document.getElementById('progress-input').value;
+            const progress = Math.min(Math.max(progressInput, 0), 100); // Ensure progress is between 0 and 100
+            const mlcSold = (progress / 100) * totalMLC;
+            const amountRaised = mlcSold * pricePerMLC;
+
+            progressBar.style.width = progress + '%';
+            document.getElementById('progress-info').textContent = `${mlcSold.toLocaleString()} / ${totalMLC.toLocaleString()} MLC ($${amountRaised.toLocaleString('en-US', { style: 'currency', currency: 'USD' }).replace('$', '')})`;
+        }
     </script>
 </body>
 </html>
