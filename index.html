@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>METALINK - Welcome to METALINK</title>
+    <title>MetaVerse - Welcome to MetaVerse</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,31 +19,53 @@
     </header>
     <section id="home">
         <div class="typing-container">
-            <h1>Welcome to METALINK</h1>
+            <h1>Welcome to MetaVerse</h1>
             <h2 class="typing">Revolutionizing Real Economy with DAO Power</h2>
         </div>
         <div id="datetime" class="datetime"></div>
-        <h2>MLC Token First Round Private Sale Progress</h2>
+        <h2>MVT Token First Round Private Sale Progress</h2>
         <div id="progress-bar-container">
             <div id="progress-bar" style="width: 10%;"></div>
         </div>
-        <p id="progress-info">50,000 / 500,000 MLC ($15,000)</p>
-        <p>Private Sale Price: $0.3 per MLC</p>
+        <p id="progress-info">50,000 / 500,000 MVT ($15,000)</p>
+        <p>Private Sale Price: $0.3 per MVT</p>
         <p>Private Sale Ends: July 31, 2024</p>
-        <p>Launch Floor Price: $1 per MLC</p>
+        <p>Launch Floor Price: $1 per MVT</p>
         <h2>Second Round Private Sale</h2>
         <div id="progress-bar-container">
             <div id="progress-bar-2" style="width: 0%;"></div>
         </div>
-        <p id="progress-info-2">0 / 300,000 MLC ($0)</p>
-        <p>Private Sale Price: $0.5 per MLC</p>
+        <p id="progress-info-2">0 / 300,000 MVT ($0)</p>
+        <p>Private Sale Price: $0.5 per MVT</p>
         <p>Private Sale Starts: August 1, 2024</p>
         <p>Private Sale Ends: August 15, 2024</p>
     </section>
     <section id="about">
         <h2>About Us</h2>
-        <p>METALINK DAO</p>
-        <p>Meta - Metaverse, Link - Connect Everything, DAO - Decentralized Autonomous Organization based on Web3 technology. Through metaverse technology and modern AI technology, we achieve interconnection between people, and between people and objects, creating a platform of interconnected everything. Decentralized management realizes a true, fair, and just ecological community that effectively empowers the real economy with virtual economy.</p>
+        <p>MetaVerse DAO</p>
+        <p>Background:</p>
+        <p>A DAO (Decentralized Autonomous Organization) initiated by experienced financial industry professionals from around the world, mainly from Europe. The members of the organization are senior and successful individuals in the financial industry, blockchain industry, and cryptocurrency circle.</p>
+        <p>DAO - Decentralized Autonomous Organization based on Web3 technology. Through metaverse technology and modern AI technology, we achieve interconnection between people, and between people and objects, creating a platform of interconnected everything. Decentralized management realizes a true, fair, and just ecological community that effectively empowers the real economy with virtual economy, where every participant has voting rights.</p>
+        <p>Overview:</p>
+        <p>We are building the next-generation decentralized social network platform based on AI model algorithms and blockchain technology.</p>
+        <p>Platform Name: MetaVerse</p>
+        <p>Sections:</p>
+        <ul>
+            <li>Social Section: Short video playback, upload, live broadcast, advertising, social networking.</li>
+            <li>Investment and Staking Section: Compute power multiplication, returns multiplication.</li>
+            <li>Mall Section: Consumption is investment, purchase goods in the mall, in addition to obtaining goods, you also get equivalent compute power returns, ultimately achieving multiplied profits.</li>
+            <li>Blockchain Finance: Providing token financial services, similar to banks.</li>
+            <li>Blockchain IPCO: Providing blockchain financial services to offline entities, investing in real-world businesses, and creating new tokens for them to achieve listing and financing plans.</li>
+            <li>Digital Asset Cards: U cards, directly spending tokens.</li>
+            <li>Offline Digital Payment (Offline Entity Token Payment)</li>
+        </ul>
+        <p>Platform Token Name: MVT</p>
+        <p>Total Issuance: 5 billion</p>
+        <p>Issuance Price: 1 USDT = 1 MVT</p>
+        <p>Launch Date: August 18 (or late August)</p>
+        <p>Internal Private Sale</p>
+        <p>First Round: 7/15 - 7/31, Quantity: 500,000 MVT, Price: 0.3 USDT/MVT. Release Rules: After the platform goes live, locked for three months, 30% released in the fourth month, and the remaining balance released linearly over 12 months.</p>
+        <p>Second Round: 8/1 - 8/15, Quantity: 300,000 MVT, Price: 0.5 USDT/MVT. Release Rules: After the platform goes live, locked for three months, 30% released in the fourth month, and the remaining balance released linearly over 12 months.</p>
     </section>
     <section id="services">
         <h2>Products & Services</h2>
@@ -51,43 +73,43 @@
     </section>
     <section id="contact">
         <h2>Contact Us</h2>
-        <form>
+        <form action="https://formspree.io/f/your-form-id" method="POST">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name">
+            <input type="text" id="name" name="name" required>
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
+            <input type="email" id="email" name="email" required>
             <label for="message">Message:</label>
-            <textarea id="message" name="message"></textarea>
+            <textarea id="message" name="message" required></textarea>
             <button type="submit">Submit</button>
         </form>
     </section>
     <footer>
-        <p>© 2024 METALINK. All rights reserved.</p>
+        <p>© 2024 MetaVerse. All rights reserved.</p>
     </footer>
     <script>
-        const totalMLC1 = 500000;
-        const pricePerMLC1 = 0.3;
-        const totalMLC2 = 300000;
-        const pricePerMLC2 = 0.5;
+        const totalMVT1 = 500000;
+        const pricePerMVT1 = 0.3;
+        const totalMVT2 = 300000;
+        const pricePerMVT2 = 0.5;
 
         // Function to update the progress bar and display information for first round
         function updateProgress1(progress) {
             const progressBar = document.getElementById('progress-bar');
-            const mlcSold = (progress / 100) * totalMLC1;
-            const amountRaised = mlcSold * pricePerMLC1;
+            const mvtSold = (progress / 100) * totalMVT1;
+            const amountRaised = mvtSold * pricePerMVT1;
 
             progressBar.style.width = progress + '%';
-            document.getElementById('progress-info').textContent = `${mlcSold.toLocaleString()} / ${totalMLC1.toLocaleString()} MLC ($${amountRaised.toLocaleString('en-US', { style: 'currency', currency: 'USD' }).replace('$', '')})`;
+            document.getElementById('progress-info').textContent = `${mvtSold.toLocaleString()} / ${totalMVT1.toLocaleString()} MVT ($${amountRaised.toLocaleString('en-US', { style: 'currency', currency: 'USD' }).replace('$', '')})`;
         }
 
         // Function to update the progress bar and display information for second round
         function updateProgress2(progress) {
             const progressBar = document.getElementById('progress-bar-2');
-            const mlcSold = (progress / 100) * totalMLC2;
-            const amountRaised = mlcSold * pricePerMLC2;
+            const mvtSold = (progress / 100) * totalMVT2;
+            const amountRaised = mvtSold * pricePerMVT2;
 
             progressBar.style.width = progress + '%';
-            document.getElementById('progress-info-2').textContent = `${mlcSold.toLocaleString()} / ${totalMLC2.toLocaleString()} MLC ($${amountRaised.toLocaleString('en-US', { style: 'currency', currency: 'USD' }).replace('$', '')})`;
+            document.getElementById('progress-info-2').textContent = `${mvtSold.toLocaleString()} / ${totalMVT2.toLocaleString()} MVT ($${amountRaised.toLocaleString('en-US', { style: 'currency', currency: 'USD' }).replace('$', '')})`;
         }
 
         // Function to display current date and time
